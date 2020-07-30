@@ -1,0 +1,37 @@
+My saved Custom Shirt Measurements
+
+<table border="1px" cellpadding="5px">
+    <tr>
+        <th>Name on Laundry Tag</th><th>Fit Style</th><th>Neck Size</th><th>Collar Style</th><th>Optional White Collar</th>
+            <th>Sleeve</th><th>Cuff</th><th>Pocket</th><th>Monogram Options</th><th>Monogram Initials</th><th>Monogram Style</th>
+            <th>Digital Signature</th><th>Monogram Color</th><th>Monogram Placement</th><th>Saved as</th>
+    </tr>
+    <?php if(!empty($measurements) && $measurements){
+		foreach ($measurements->getItems() as $shirt_specs){ ?>		
+			<tr>
+                            <td><?php echo $shirt_specs['nameOnShirt']; ?></td>
+                            <td><?php echo $shirt_specs['fitStyle']; ?></td>
+                            <td><?php echo $shirt_specs['neckSize']; ?></td>
+                            <td><?php echo $shirt_specs['collarStyle']; ?></td>
+                            <td><?php echo $shirt_specs['whiteColloar']; ?></td>
+                            <td><?php echo $shirt_specs['sleeve']; ?></td>
+                            <td><?php echo $shirt_specs['cuff']; ?></td>
+                            <td><?php echo $shirt_specs['pocket']; ?></td>
+                            <td><?php echo $shirt_specs['monogram']; ?></td>
+                            <td><?php echo $shirt_specs['monogramInitials']; ?></td>
+                            <td><?php echo $shirt_specs['monogramStyle']; ?></td>
+                            <td><?php echo $shirt_specs['digitalSignature']; ?></td>
+                            <td><?php echo $shirt_specs['monogramColor']; ?></td>
+                            <td><?php echo $shirt_specs['monogramPlace']; ?></td>
+                            <td><?php echo $shirt_specs['measurementName']; ?></td>
+                            <td><a href="<?php $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK); ?>/mymeasurements/index/createshirt?id=<?php echo $shirt_specs->getId(); ?>" >Edit</a></td>
+                            <td><a href="<?php $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK); ?>/mymeasurements/index/deleteshirt?id=<?php echo $shirt_specs->getId(); ?>" >Delete</a></td>
+		        </tr>
+		<?php }//endforeach 
+	} ?>
+	</table><br /><br />
+	</p>
+	
+	 <p class="style1">
+    	<strong><a href="<?php $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK); ?>/mymeasurements/index/createshirt">Add a new custom shirt measurement.</a></strong>
+	</p>

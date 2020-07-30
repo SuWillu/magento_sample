@@ -1,0 +1,184 @@
+Custom Shirt Size
+<?php if (!isset($this->customshirt)) {
+          $this->customshirt = $this->_session->getData('customshirt_form');
+      } ?>
+<form id="customshirtform" action="<?php echo $this->getBaseUrl() . 'mymeasurements/index/saveshirt'; ?>" method="post">
+    <div>
+        <label class="customSize " for="nameOnShirt">
+            <span>Name on Laundry Tag:</span>
+        </label><br />
+        <input name="nameOnShirt" type="text" value="<?php if (isset($this->customshirt['nameOnShirt'])) { echo $this->customshirt['nameOnShirt']; } ?>">
+    </div>
+    <div>
+        <label class="customSize" for="fitStyle">
+       	    <span>* Fit Style:</span>
+        </label><br />
+        <input name="fitStyle" type="radio" value="classic" <?php if(isset($this->customshirt['fitStyle']) && $this->customshirt['fitStyle'] == 'classic') { echo "checked"; } ?>
+            data-validate="{required:true}"> Classic<br />
+        <input name="fitStyle" type="radio" value="extra_full" <?php if(isset($this->customshirt['fitStyle']) && $this->customshirt['fitStyle'] == 'extra_full') { echo "checked"; } ?>
+            data-validate="{required:true}"> Extra Full<br />
+        <input name="fitStyle" type="radio" value="tall" <?php if(isset($this->customshirt['fitStyle']) && $this->customshirt['fitStyle'] == 'tall') { echo "checked"; } ?>
+            data-validate="{required:true}"> Tall<br />
+        <input name="fitStyle" type="radio" value="tall_tapered" <?php if(isset($this->customshirt['fitStyle']) && $this->customshirt['fitStyle'] == 'tall_tapered') { echo "checked"; } ?>
+            data-validate="{required:true}"> Tall Tapered<br />
+        <input name="fitStyle" type="radio" value="tapered" <?php if(isset($this->customshirt['fitStyle']) && $this->customshirt['fitStyle'] == 'tapered') { echo "checked"; } ?>
+            data-validate="{required:true}"> Tapered
+    </div>
+    <div>
+        <label class="customSize" for="neckSize">
+	    <span>Neck Size:</span>
+        </label><br />
+        <input name="neckSize" type="text" value="<?php if (isset($this->customshirt['neckSize'])) { echo $this->customshirt['neckSize']; } ?>">
+    </div>
+    <div>
+        <label class="customSize" for="collarStyle">
+	    <span>* Collar Style:</span>
+        </label><br />
+        <input name="collarStyle" type="radio" value="bc" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'bc') { echo "checked"; } ?>
+            data-validate="{required:true}"> Banded Collar(BC)<br />
+        <input name="collarStyle" type="radio" value="bsu" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'bsu') { echo "checked"; } ?>
+            data-validate="{required:true}"> Button Down(BSU)<br />
+        <input name="collarStyle" type="radio" value="je" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'je') { echo "checked"; } ?>
+            data-validate="{required:true}"> Classic Spread(JE)<br />
+        <input name="collarStyle" type="radio" value="th" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'th') { echo "checked"; } ?>
+            data-validate="{required:true}"> Euro Point Long(TH)<br />
+        <input name="collarStyle" type="radio" value="hbd" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'hbd') { echo "checked"; } ?>
+            data-validate="{required:true}"> Hidden Button Down(HBD)<br />
+        <input name="collarStyle" type="radio" value="m" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'm') { echo "checked"; } ?>
+            data-validate="{required:true}"> Point(M)<br />
+        <input name="collarStyle" type="radio" value="rob" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'rob') { echo "checked"; } ?>
+            data-validate="{required:true}"> Rimini Curved(ROB)<br />
+        <input name="collarStyle" type="radio" value="ech" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'ech') { echo "checked"; } ?>
+            data-validate="{required:true}"> Spread(ECH)<br />
+        <input name="collarStyle" type="radio" value="ptst" <?php if(isset($this->customshirt['collarStyle']) && $this->customshirt['collarStyle'] == 'ptst') { echo "checked"; } ?>
+            data-validate="{required:true}"> Tab(PTST)
+    </div>
+    <div>
+        <label class="customSize" for="whiteCollar">
+	    <span>* Optional White Collar:</span>
+        </label><br />
+        <input name="whiteCollar" type="radio" value="0" <?php if(isset($this->customshirt['whiteCollar']) && $this->customshirt['whiteCollar'] == '0') { echo "checked"; } ?>
+            data-validate="{required:true}"> No<br />
+        <input name="whiteCollar" type="radio" value="1" <?php if(isset($this->customshirt['whiteCollar']) && $this->customshirt['whiteCollar'] == '1') { echo "checked"; } ?>
+            data-validate="{required:true}"> Yes +$12
+    </div>
+    <div>
+        <label class="customSize" for="sleeve">
+            <span>Sleeve:</span>
+        </label><br />
+        <input name="sleeve" type="text" value="<?php if (isset($this->customshirt['sleeve'])) { echo $this->customshirt['sleeve']; } ?>">
+    </div>
+    <div>
+        <label class="customSize" for="cuff">
+       	    <span>* Cuff:</span>
+        </label><br />
+        <input name="cuff" type="radio" value="barrel" <?php if(isset($this->customshirt['cuff']) && $this->customshirt['cuff'] == 'barrel') { echo "checked"; } ?>
+            data-validate="{required:true}"> Barrel<br />
+        <input name="cuff" type="radio" value="converter" <?php if(isset($this->customshirt['cuff']) && $this->customshirt['cuff'] == 'converter') { echo "checked"; } ?>
+            data-validate="{required:true}"> Converter<br />
+        <input name="cuff" type="radio" value="french" <?php if(isset($this->customshirt['cuff']) && $this->customshirt['cuff'] == 'french') { echo "checked"; } ?>
+            data-validate="{required:true}"> French<br />
+        <input name="cuff" type="radio" value="watch_barrel" <?php if(isset($this->customshirt['cuff']) && $this->customshirt['cuff'] == 'watch_barrel') { echo "checked"; } ?>
+            data-validate="{required:true}"> Watch Barrel Cuff +$10<br />
+      </div>
+    <div>
+        <label class="customSize" for="pocket">
+       	    <span>* Pocket:</span>
+        </label><br />
+        <input name="pocket" type="radio" value="0" <?php if(isset($this->customshirt['pocket']) && $this->customshirt['pocket'] == '0') { echo "checked"; } ?>
+            data-validate="{required:true}"> None<br />
+        <input name="pocket" type="radio" value="1" <?php if(isset($this->customshirt['pocket']) && $this->customshirt['pocket'] == '1') { echo "checked"; } ?>
+            data-validate="{required:true}"> One<br />
+        <input name="pocket" type="radio" value="2" <?php if(isset($this->customshirt['pocket']) && $this->customshirt['pocket'] == '2') { echo "checked"; } ?>
+            data-validate="{required:true}"> Two<br />
+        <input name="pocket" type="radio" value="oversized" <?php if(isset($this->customshirt['pocket']) && $this->customshirt['pocket'] == 'oversized') { echo "checked"; } ?>
+            data-validate="{required:true}"> Oversized<br />
+    </div>
+    <div>
+        <label class="customSize" for="monogram">
+       	    <span>* Monogram Options:</span>
+        </label><br />
+        <input name="monogram" type="radio" value="0" <?php if(isset($this->customshirt['monogram']) && $this->customshirt['monogram'] == '0') { echo "checked"; } ?>
+            data-validate="{required:true}"> None<br />
+        <input name="monogram" type="radio" value="initials" <?php if(isset($this->customshirt['monogram']) && $this->customshirt['monogram'] == 'initials') { echo "checked"; } ?>
+            data-validate="{required:true}"> Initials Monogram +$10<br />
+        <input name="monogram" type="radio" value="signature" <?php if(isset($this->customshirt['monogram']) && $this->customshirt['monogram'] == 'signature') { echo "checked"; } ?>
+            data-validate="{required:true}"> Signature Monogram +$25<br />
+    </div>
+    <div>
+        <label class="customSize" for="monogramInitials">
+	    <span>Monogram Initials:</span>
+        </label><br />
+        <input name="monogramInitials" type="text" value="<?php if (isset($this->customshirt['monogramInitials'])) { echo $this->customshirt['monogramInitials']; } ?>">
+    </div>
+    <div>
+        <label class="customSize" for="monogramStyle">
+	    <span>* Monogram Style:</span>
+        </label><br />
+        <input name="monogramStyle" type="radio" value="0" <?php if(isset($this->customshirt['monogramStyle']) && $this->customshirt['monogramStyle'] == '0') { echo "checked"; } ?>
+            data-validate="{required:true}"> None<br />
+        <input name="monogramStyle" type="radio" value="b5" <?php if(isset($this->customshirt['monogramStyle']) && $this->customshirt['monogramStyle'] == 'b5') { echo "checked"; } ?>
+            data-validate="{required:true}"> B5<br />
+        <input name="monogramStyle" type="radio" value="b6" <?php if(isset($this->customshirt['monogramStyle']) && $this->customshirt['monogramStyle'] == 'b6') { echo "checked"; } ?>
+            data-validate="{required:true}"> B6<br />
+        <input name="monogramStyle" type="radio" value="b9" <?php if(isset($this->customshirt['monogramStyle']) && $this->customshirt['monogramStyle'] == 'b9') { echo "checked"; } ?>
+            data-validate="{required:true}"> B9<br />
+        <input name="monogramStyle" type="radio" value="s2" <?php if(isset($this->customshirt['monogramStyle']) && $this->customshirt['monogramStyle'] == 's2') { echo "checked"; } ?>
+            data-validate="{required:true}"> S2<br />
+        <input name="monogramStyle" type="radio" value="s5" <?php if(isset($this->customshirt['monogramStyle']) && $this->customshirt['monogramStyle'] == 's5') { echo "checked"; } ?>
+            data-validate="{required:true}"> S5<br />
+    </div>
+    <div>
+        <label class="customSize" for="digitalSignature">
+            <span>Digital Signature:</span>
+        </label><br />
+        <input name="digitalSignature" type="radio" value="0" <?php if(isset($this->customshirt['digitalSignature']) && $this->customshirt['digitalSignature'] == '0') { echo "checked"; } ?>
+> None<br />
+        <input name="digitalSignature" type="radio" value="1" <?php if(isset($this->customshirt['digitalSignature']) && $this->customshirt['digitalSignature'] == '1') { echo "checked"; } ?>
+> Digitize (One...???) 
+    </div>
+    <div>
+        <label class="customSize" for="monogramColor">
+       	    <span>* Monogram Color:</span>
+        </label><br />
+        <input name="monogramColor" type="text" value="<?php if (isset($this->customshirt['monogramColor'])) { echo $this->customshirt['monogramColor']; } ?>" data-validate="{required:true}">
+    </div> 
+    <div>
+        <label class="customSize" for="monogramPlace">
+	    <span>* Monogram Placement:</span>
+        </label><br />
+        <input name="monogramPlace" type="radio" value="0" <?php if(isset($this->customshirt['monogramPlace']) && $this->customshirt['monogramPlace'] == '0') { echo "checked"; } ?>
+            data-validate="{required:true}"> None<br />
+        <input name="monogramPlace" type="radio" value="chest" <?php if(isset($this->customshirt['monogramPlace']) && $this->customshirt['monogramPlace'] == 'chest') { echo "checked"; } ?>
+            data-validate="{required:true}"> Chest (no Pocket)<br />
+        <input name="monogramPlace" type="radio" value="pocket" <?php if(isset($this->customshirt['monogramPlace']) && $this->customshirt['monogramPlace'] == 'pocket') { echo "checked"; } ?>
+            data-validate="{required:true}"> Pocket<br />
+        <input name="monogramPlace" type="radio" value="left_cuff" <?php if(isset($this->customshirt['monogramPlace']) && $this->customshirt['monogramPlace'] == 'left_cuff') { echo "checked"; } ?>
+            data-validate="{required:true}"> Left Cuff<br />
+        <input name="monogramPlace" type="radio" value="right_cuff" <?php if(isset($this->customshirt['monogramPlace']) && $this->customshirt['monogramPlace'] == 'right_cuff') { echo "checked"; } ?>
+            data-validate="{required:true}"> Right Cuff<br />
+    </div>
+    <div>
+        <label class="customSize" for="measurmentName">
+       	    <span>* Save Measurements as:</span>
+        </label><br />
+        <input name="measurementName" type="text" value="<?php if (isset($this->customshirt['measurementName'])) { echo $this->customshirt['measurementName']; } ?>" ddata-validate="{required:true}">
+    </div> 
+<?php if(isset($this->customshirt)){ ?> 
+ <input type="hidden" name="xertigo_mymeasurements_customshirt_id" value="<?php if (isset($this->customshirt['xertigo_mymeasurements_customshirt_id'])) { echo $this->customshirt['xertigo_mymeasurements_customshirt_id']; } ?>" > 
+<?php } ?>
+<div><?php echo $this->getBlockHtml('formkey'); ?></div>
+     <input type="submit" value="Save To Account"> </form>
+     <?php          $this->_session->unsetData('customshirt_form');  ?>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/mage'
+        ], function($){
+
+           var dataForm = $('#customshirtform');
+           dataForm.mage('validation', {});
+
+    });
+</script>

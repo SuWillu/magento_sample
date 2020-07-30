@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="2columns-left">
+ <update handle="customer_account"/>
+   <body>
+        <referenceContainer name="columns.top">
+            <block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/>
+            <container name="page.messages" htmlTag="div" htmlClass="page messages">
+                <block class="Magento\Framework\View\Element\Template" name="ajax.message.placeholder" template="Magento_Theme::html/messages.phtml"/>
+                <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages" template="Magento_Theme::messages.phtml"/>
+            </container>
+        </referenceContainer>
+       	<referenceContainer name="content">
+   	    <block type="core/template" class="Xertigo\MyMeasurements\Block\Customshirt" name="mymeasurements_index_createshirt.view" after="div.sidebar-main" template="Xertigo_MyMeasurements::shirt.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

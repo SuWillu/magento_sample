@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="2columns-left">
+ <update handle="customer_account"/>
+    <head>
+        <title>
+            Save Custom Measurements
+        </title>
+    </head>
+    <body>
+      <referenceContainer name="page.messages">
+            <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages"/>
+        </referenceContainer>
+       	<referenceContainer name="content">
+   	    <block type="core/template" class="Xertigo\MyMeasurements\Block\SavedShirt" name="mymeasurements_index_index.view" template="Xertigo_MyMeasurements::saveshirt.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

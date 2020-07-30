@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="2columns-left">
+ <update handle="customer_account"/>
+  <head>
+        <title>
+            Edit Custom Measurements
+        </title>
+    </head>
+    <body>
+      <referenceBlock name="page.main.title">
+        <action method="setPageTitle">
+            <argument translate="true" name="title" xsi:type="string">Edit Shirt Measurements</argument>
+        </action>
+      </referenceBlock>
+<referenceContainer name="page.messages">
+        <block class="Magento\Framework\View\Element\Template" name="ajax.message.placeholder" template="Magento_Theme::html/messages.phtml"/>
+        <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages" template="Magento_Theme::messages.phtml"/>
+</referenceContainer>
+       	<referenceContainer name="content">
+   	    <block type="core/template" class="Xertigo\MyMeasurements\Block\Customshirt" name="mymeasurements_index_createshirt.view" before="div.sidebar-main" template="Xertigo_MyMeasurements::shirt.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>
